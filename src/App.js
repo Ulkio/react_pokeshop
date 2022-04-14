@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Hero from "./containers/Hero/Hero";
+import Nav from "./containers/Nav/Nav";
+import Shop from "./components/Shop/Shop";
 
 function App() {
+  // getAllPokemons().then((res) => {
+  //   console.log(res.data.results);
+  // });
+  // getPokemonByName("bulbasaur").then((res) => {
+  //   console.log(res.data.name);
+  // });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Nav />
+      <Hero />
+      <Shop />
+    </>
   );
 }
 

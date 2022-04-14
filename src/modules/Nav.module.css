@@ -1,0 +1,11 @@
+nav {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 5vh;
+  background: linear-gradient(to left, rgb(95, 0, 0), rgb(155, 0, 0));
+}
+nav h1 {
+  margin-left: 2em;
+  color: #fff;
+}

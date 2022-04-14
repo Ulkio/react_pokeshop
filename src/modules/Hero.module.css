@@ -1,0 +1,25 @@
+.heroBg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+    url("../assets/bg.jpg");
+
+  /* Set a specific height */
+  height: 95vh;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.heroTxt {
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.heroTxt h1 {
+  letter-spacing: 0.2em;
+  font-size: 5em;
+}
