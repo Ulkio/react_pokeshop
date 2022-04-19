@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from "react";
 import styles from "../../modules/Shop.module.css";
 import { getAllPokemons, getPokemonByName } from "../../api/pokeapi";
+import Card from "../Card/Card";
 
 function Shop() {
   const [pokemons, setPokemons] = useState([]);
+  const [dataLoading, setDataLoading] = useState(true);
 
   useEffect(() => {
     axiosGetAllPokemons();
   }, []);
 
-  // PROBLEME DE MULTIPLE FETCH
   const axiosGetAllPokemons = async () => {
-    await getAllPokemons().then((res) => {
-      res.results.map(async (item) => {
-        await getPokemonByName(item.name).then((res2) => {
-          setPokemons((pokemons) => [...pokemons, res2]);
-        });
+    const pokemonArray = await getAllPokemons();
+
+    pokemonArray.results.map(async (poke) => {
+      await getPokemonByName(poke.name).then((res) => {
+        setPokemons((prevState) => [...prevState, res]);
+        setDataLoading(false);
       });
     });
   };
@@ -23,14 +25,22 @@ function Shop() {
   const display = () => {
     return pokemons.map((pokemon) => {
       return (
-        <React.Fragment key={pokemon.name}>
-          <h2>{pokemon.names[4].name}</h2>
-        </React.Fragment>
+        <article key={pokemon.id}>
+          <Card pokemon={pokemon} />
+        </article>
       );
     });
   };
 
-  return <>{display()}</>;
+  return (
+    <>
+      {dataLoading ? (
+        <h1>Chargement des données</h1>
+      ) : (
+        <div className={styles.cardList}>{display()}</div>
+      )}
+    </>
+  );
 }
 
 export default Shop;

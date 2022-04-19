@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Nav />
-      <Hero />
+      {/* <Hero /> */}
       <Shop />
     </>
   );

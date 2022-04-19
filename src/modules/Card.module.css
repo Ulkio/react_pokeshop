@@ -1,0 +1,21 @@
+.container {
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  font-size: 2em;
+  border: solid black 1px;
+}
+.cardImg img {
+  flex: 1;
+  height: 200px;
+  border-radius: 10px;
+}
+.cardContent {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+.pokemonName {
+  text-align: center;
+}

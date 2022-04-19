@@ -1,0 +1,15 @@
+.cardList {
+  margin-top: 1em;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1em;
+  column-count: 2; */
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  grid-gap: 1rem;
+}
