@@ -6,7 +6,7 @@ function Hero() {
     <section>
       <div className={styles.heroBg}>
         <div className={styles.heroTxt}>
-          <h1>Achetez vos Pokémon dans notre super Pokéshop !</h1>
+          <h1>Un super pokédex !</h1>
         </div>
       </div>
     </section>

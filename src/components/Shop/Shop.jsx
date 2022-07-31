@@ -32,15 +32,7 @@ function Shop() {
     });
   };
 
-  return (
-    <>
-      {dataLoading ? (
-        <h1>Chargement des données</h1>
-      ) : (
-        <div className={styles.cardList}>{display()}</div>
-      )}
-    </>
-  );
+  return <>{dataLoading ? <h1>Chargement des données</h1> : <div className={styles.cardList}>{display()}</div>}</>;
 }
 
 export default Shop;

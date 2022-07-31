@@ -11,6 +11,7 @@ function Card({ pokemon }) {
         <div className={styles.cardContent}>
           <div className={styles.pokemonName}>
             <h1>{pokemon.name}</h1>
+            <h6>N°{pokemon.id}</h6>
           </div>
 
           {pokemon.types.map((res) => {
